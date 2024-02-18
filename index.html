@@ -63,9 +63,10 @@
                         <p class="py-6 text-white">Yes, you can run unit tests and view the results directly within the
                             app. The
                             integrated testing features allow for a streamlined .</p>
-                        <button
-                            class="btn  bg-[#1DD100] hover:bg-[#1DD100] hover:text-[#fff] border-0 text-xl font-semibold">But
-                            Tickets</button>
+
+                        <a href="#purchase-form"
+                            class="btn  bg-[#1DD100] hover:bg-[#1DD100] hover:text-[#fff] border-0 text-xl font-semibold">Buy
+                            Tickets</a>
                     </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@
                     </div>
                     <div class="card w-80 bg-base-100 border-b-4 border-[#1DD100] ">
                         <div class="flex p-8 gap-4">
-                            <div class=""><img src="./images/stoppage.png" alt=""></div>
+                            <div class="border-dashed border-2"><img src="./images/stoppage.png" alt=""></div>
                             <div>
                                 <h1 class="text-4xl font-bold">80K+</h1>
                                 <p class="text-gray-500">Rental partners</p>
@@ -105,9 +106,9 @@
     </header>
 
     <!-- Main Section -->
-    <main class="max-w-6xl mx-auto">
+    <main class="mx-auto">
         <!-- Best Offer Section -->
-        <section>
+        <section class="max-w-6xl mx-auto">
             <div>
                 <div class="flex justify-center">
                     <h1 class="text-2xl lg:text-4xl mb-12 font-bold">Best offers for you</h1>
@@ -144,14 +145,72 @@
                 </div>
                 <div class="flex justify-center my-16">
                     <button
-                        class="btn text-[#1dd100] hover:text-white bg-white hover:bg-[#1dd100] rounded-sm border-1 border-[#1dd100]">See
+                        class="btn text-[#1dd100] hover:text-white bg-white hover:bg-[#1dd100] rounded-xl border-1 border-[#1dd100]">See
                         All
                         Offers</button>
                 </div>
             </div>
         </section>
 
+        <!-- Ticket Purchase Form -->
+        <section class="w-full mx-auto rounded-t-[80px] bg-[#F7F8F8] border-[#1dd100] border-t-2 py-20">
+            <div class="max-w-6xl mx-auto " id="purchase-form">
+                <div class="text-center mb-10">
+                    <h1 class="text-3xl font-bold mb-6 font-raleway">Abrar Paribahan</h1>
+                    <p class="text-[#03071299] font-inter">Yes, you can run unit tests and view the
+                        results directly within the app. The integrated testing features allow for a streamlined</p>
+                </div>
 
+                <!-- Coach info -->
+                <div class="bg-white p-8 flex">
+                    <div class="w-4/6">
+                        <!-- Coach Details -->
+                        <div class="flex flex-col lg:flex-row  justify-between">
+                            <div class="flex items-center gap-4">
+                                <img src="./images/bus-logo.png" alt="">
+                                <div>
+                                    <h1 class="font-raleway text-4xl font-bold">Abrar Paribahan</h1>
+                                    <p class="text-gray-500"> Coach-009-WEB ! AC_Business</p>
+                                </div>
+                            </div>
+                            <!-- Available Seats -->
+                            <div class="flex bg-[#1dd10026] rounded-xl p-3 gap-1">
+                                <img src="./images/seat-green.png" alt="">
+                                <p class="text-[18px] font-semibold">40 Seats left</p>
+                            </div>
+                        </div>
+                        <div class="rounded-xl bg-[#F7F8F8] p-4 mt-6 ">
+                            <!-- Travel Details /Table -->
+                            <div class="flex justify-between py-3 border-b-2 border-dashed">
+                                <h1>Route</h1>
+                                <h1 class="text-[18px] text-[#030712] font-[600]">Dhaka - Sylhet</h1>
+                            </div>
+                            <div class="flex justify-between py-3 border-b-2 border-dashed">
+                                <h1>Departure Time</h1>
+                                <h1 class="text-[18px] text-[#030712] font-[600]">9:00 PM</h1>
+                            </div>
+                            <div class="flex justify-between py-3">
+                                <h1 class="text-[16px] text-[#030712] bg-[#0307120d] rounded-xl p-3">Boarding
+                                    Point-Laxmipur
+                                </h1>
+                                <h1 class="text-[16px] text-[#030712] bg-[#0307120d] rounded-xl p-3">Dropping
+                                    Point-Bogura
+                                </h1>
+                                <h1 class="text-[16px] text-[#030712] bg-[#0307120d] rounded-xl p-3">Est. Time - 11 Hour
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Fair -->
+                    <div class="w-2/6 bg-[url('./images/info-devider.png bg-no-repeat')] flex flex-row justify-center">
+                        <img class="" src="./images/fare.png" alt="">
+                        <h1 class="font-raleway text-3xl font-bold">550 Taka</h1>
+                        <p> Per Seat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
 
