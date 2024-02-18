@@ -12,8 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class=" mx-auto">
-    <header class="max-w-7xl font-raleway">
+<body class="">
+    <header class="max-w-6xl mx-auto font-raleway">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -47,7 +47,7 @@
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn border border-[#1dd10066] bg-[#1dd1001a] ">Bus
+                <a class="btn border text-[#1dd100] border-[#1dd10066] bg-[#1dd1001a] ">Bus
                     <img class="border-2 border-dashed" src="./images/bus-icon.png" alt="">
                 </a>
             </div>
@@ -57,9 +57,9 @@
             <div class="hero bg-[url('./images/banner.png')] pt-24 pb-32">
                 <div class="hero-content text-center">
                     <div class="">
-                        <h1 class="text-6xl font-bold text-white mb-8"> End-to-End Travel with
+                        <h1 class="text-4xl lg:text-6xl font-bold text-white mb-8"> End-to-End Travel with
                         </h1>
-                        <h1 class="text-6xl font-bold textGreen">Abrar Paribahan</h1>
+                        <h1 class="text-4xl lg:text-6xl font-bold textGreen">Abrar Paribahan</h1>
                         <p class="py-6 text-white">Yes, you can run unit tests and view the results directly within the
                             app. The
                             integrated testing features allow for a streamlined .</p>
@@ -104,38 +104,58 @@
         </section>
     </header>
 
-    <!-- Best Offer Section -->
-    <section>
-        <div>
-            <div class="flex justify-center">
-                <h1 class="text-4xl font-bold">Best offers for you</h1>
-            </div>
-            <div class="flex gap-3">
-                <div class="flex bg-[#FFBF0F]  rounded-xl">
-                    <div class="text-center p-5 bg-[url('./images/cupon-devider.png')] bg-no-repeat bg-left">
-                        <h1>15% OFF</h1>
-                        <h3>on your next purchase</h3>
-                        <p>use by January 2024</p>
+    <!-- Main Section -->
+    <main class="max-w-6xl mx-auto">
+        <!-- Best Offer Section -->
+        <section>
+            <div>
+                <div class="flex justify-center">
+                    <h1 class="text-2xl lg:text-4xl mb-12 font-bold">Best offers for you</h1>
+                </div>
+                <div class="flex flex-col lg:flex-row justify-center gap-6">
+                    <div class="flex bg-[#FFBF0F]  rounded-xl">
+                        <div class="text-center p-[20px] pr-[0px] lg:p-[50px]">
+                            <h1 class="text-[30px] lg:text-[40px] font-black">15% OFF</h1>
+                            <h3 class="text-[18px] lg:text-[20px] font-semibold">on your next purchase</h3>
+                            <p class="text-[14px] lg:text-[18px] font-[500] text-[#03071280]">use by January 2024</p>
+                        </div>
+                        <div
+                            class="text-center p-[20px] pl-[35px] lg:p-[50px] flex flex-col justify-center items-center bg-[url('./images/cupon-devider.png')] bg-no-repeat bg-left ">
+                            <div class="">
+                                <h1 class="text-[25px] lg:text-[32px] font-bold font-raleway">NEW15</h1>
+                                <p class="text-[18px] font-[500] text-[#03071280]">Coupon Code</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center p-5 flex items-center">
-                        <h1>NEW15</h1>
-                        <p>Coupon Code</p>
+                    <div class="flex bg-[#F78C9C]  rounded-xl">
+                        <div class="text-center p-[20px] pr-[0px] lg:p-[50px]">
+                            <h1 class="text-[30px] lg:text-[40px] font-black">20% OFF</h1>
+                            <h3 class="text-[18px] lg:text-[20px] font-semibold">on your next purchase</h3>
+                            <p class="text-[14px] lg:text-[18px] font-[500] text-[#03071280]">use by January 2024</p>
+                        </div>
+                        <div
+                            class="text-center p-[20px] pl-[35px] lg:p-[50px] flex flex-col justify-center items-center bg-[url('./images/cupon-devider.png')] bg-no-repeat bg-left ">
+                            <div class="">
+                                <h1 class="text-[20px] lg:text-[32px] font-bold font-raleway">Couple 20</h1>
+                                <p class="text-[14px] font-[500] text-[#03071280]">Coupon Code</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex bg-[#FFBF0F]">
-                    <div class="text-center p-5">
-                        <h1>15% OFF</h1>
-                        <h3>on your next purchase</h3>
-                        <p>use by January 2024</p>
-                    </div>
-                    <div class="text-center p-5 flex items-center">
-                        <h1>NEW15</h1>
-                        <p>Coupon Code</p>
-                    </div>
+                <div class="flex justify-center my-16">
+                    <button
+                        class="btn text-[#1dd100] hover:text-white bg-white hover:bg-[#1dd100] rounded-sm border-1 border-[#1dd100]">See
+                        All
+                        Offers</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
+    </main>
+
+
+
 
     <script src="./scripts/smart-ticketing.js"></script>
 </body>
