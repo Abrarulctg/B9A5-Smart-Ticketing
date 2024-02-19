@@ -165,7 +165,7 @@
                 <div class="bg-white flex flex-col lg:flex-row justify-between items-center">
                     <div class="w-full lg:w-4/5 pt-8 pb-8 pl-8 pr-8 lg:pr-16 coach-info-container">
                         <!-- Coach Details -->
-                        <div class="flex flex-col lg:flex-row  justify-between">
+                        <div class="flex flex-col lg:flex-row  justify-between items-center">
                             <div class="flex items-center gap-4">
                                 <img src="./images/bus-logo.png" alt="">
                                 <div>
@@ -173,12 +173,13 @@
                                     <p class="text-gray-500"> Coach-009-WEB ! AC_Business</p>
                                 </div>
                             </div>
-                            <!-- Available Seats -->
 
+                            <!-- Available Seats -->
                             <div class="flex bg-[#1dd10026] rounded-xl p-3 gap-1">
                                 <img class="border-dashed border-gray-300 border-2" src="./images/seat-green.png"
                                     alt="">
-                                <p class="text-[18px] font-semibold text-[#1dd100]">40 Seats left</p>
+                                <p class="text-[18px] font-semibold text-[#1dd100]"><span id="total-seat">40</span>
+                                    Seats left</p>
                             </div>
                         </div>
                         <div class="rounded-xl bg-[#F7F8F8] p-4 mt-6 ">
@@ -255,14 +256,14 @@
 
                                 </p>
                             </div>
-                            <!-- Seats -->
-                            <div class="grid grid-cols-5 gap-5">
-                                <p id="A " class="flex justify-center items-center">A </p>
+                            <!------------------------ Seats ------------------------------->
+                            <div class="grid grid-cols-5 gap-5" id="seat-container">
+                                <p class="flex justify-center items-center">A </p>
                                 <p id="A1" class="bg-[#F7F8F8] py-4 px-10 rounded-xl">A1</p>
                                 <p id="A2" class="bg-[#F7F8F8] py-4 px-10 rounded-xl">A2</p>
                                 <p id="A3" class="bg-[#F7F8F8] py-4 px-10 rounded-xl ml-6">A3</p>
                                 <p id="A4" class="bg-[#F7F8F8] py-4 px-10 rounded-xl">A4</p>
-                                <p id="B " class="flex justify-center items-center">B </p>
+                                <p class="flex justify-center items-center">B </p>
                                 <p id="B1" class="bg-[#F7F8F8] py-4 px-10 rounded-xl">B1</p>
                                 <p id="B2" class="bg-[#F7F8F8] py-4 px-10 rounded-xl">B2</p>
                                 <p id="B3" class="bg-[#F7F8F8] py-4 px-10 rounded-xl ml-6">B3</p>
@@ -323,7 +324,7 @@
                             <div class="overflow-x-auto bg-[#F7F8F8] p-6 rounded-xl">
                                 <table class="table">
                                     <!-- head -->
-                                    <tbody>
+                                    <tbody id="selected-seat-container">
                                         <tr class="border-b-2 border-dashed border-gray-200">
                                             <th>Seat <span class="bg-[#1dd100] text-white ml-2 px-2 rounded">0</span>
                                             </th>
@@ -332,17 +333,17 @@
                                         </tr>
 
                                         <!-- row 1 -->
-                                        <tr>
+                                        <!-- <tr>
                                             <td>A2</td>
                                             <td>Economy</td>
                                             <td class="text-right">550</td>
-                                        </tr>
+                                        </tr> -->
                                         <!-- row 2 -->
-                                        <tr>
+                                        <!-- <tr>
                                             <td>C2</td>
                                             <td>Economy</td>
                                             <td class="text-right">550</td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                                 <div>
