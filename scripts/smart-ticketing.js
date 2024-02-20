@@ -57,10 +57,29 @@ function createTableRowInPurchaseForm(selectedSeat) {
 }
 
 
+// Updating Total Price
+function calculateTicketPrice(counterQty) {
+    const totalPriceElement = document.getElementById('total-price');
+    const totalPriceText = parseInt(totalPriceElement.innerText);
+    const totalPrice = counterQty * 550;
+    totalPriceElement.innerText = totalPrice;
 
-// function updateTotal(){
-//     const 
+    const grandTotalPriceElement = document.getElementById('grand-total');
+    const grandTotalPrice = parseInt(grandTotalPriceElement.innerText);
+    grandTotalPriceElement.innerText = totalPrice;
+
+    return totalPrice, grandTotalPrice;
+}
+
+// function updateGrandTotal(counterQty) {
+//     const totalPriceElement = document.getElementById('grand-total');
+//     const totalPriceText = parseInt(totalPriceElement.innerText);
+//     const totalPrice = counterQty * 550;
+//     totalPriceElement.innerText = totalPrice;
+//     return totalPrice;
 // }
+
+
 
 // Update Selected Seat Count
 function updateSelectedSeatCountById(elementId) {
@@ -71,7 +90,71 @@ function updateSelectedSeatCountById(elementId) {
 }
 
 
+// Calculating Discount 
+function calculateDiscountAmount(couponAmount) {
+    const totalPrice = document.getElementById('total-price').innerText;
+    const discountAmount = (totalPrice * couponAmount);
+    // console.log(discountAmount)
 
+    const priceAfterDiscount = totalPrice - discountAmount;
+    // console.log("After Discount", priceAfterDiscount)
+
+    // Hiding Discount Form
+    const discountForm = document.getElementById('discount-form');
+    discountForm.classList.add('hidden')
+
+    // Displaying Discount amount Container
+    const displayAmountDisplay = document.getElementById('discount-amount-display');
+    displayAmountDisplay.classList.remove('hidden');
+
+    // Updating Discount Amount
+    const discountAmountElement = document.getElementById('discount-amount');
+    const discountAmountCount = parseInt(discountAmountElement.innerText);
+    // console.log(discountAmountCount)
+    discountAmountElement.innerText = discountAmount;
+
+    // Updating GrandTotal
+    const grandTotalPriceElement = document.getElementById('grand-total');
+    const grandTotalPrice = parseInt(grandTotalPriceElement.innerText);
+    grandTotalPriceElement.innerText = priceAfterDiscount;
+}
+
+
+
+
+function get_element_by_id(elementID) {
+    return document.getElementById(elementID);
+}
+
+// Enabling apply button if coupon code is matched
+get_element_by_id('coupon-input').addEventListener('keyup', function (e) {
+    let userInput = get_element_by_id('coupon-input').value;
+    // console.log(userInput)
+    if (userInput === "NEW15" || userInput === "Couple 20") {
+        get_element_by_id('coupon-apply-btn').removeAttribute('disabled');
+    }
+})
+
+
+
+function couponApply() {
+    // console.log("Btn clicked");
+    const couponText = document.getElementById('coupon-input').value;
+    // console.log(couponText)
+
+    const NEW15 = 0.15;
+    const couple20 = 0.20;
+    if (couponText === 'NEW15') {
+        calculateDiscountAmount(NEW15);
+    }
+    else if (couponText === 'Couple 20') {
+        calculateDiscountAmount(couple20);
+
+    }
+    else {
+        console.log("code doesn't matched");
+    }
+}
 
 
 // ============================ New Function Starting here ============================
@@ -88,7 +171,7 @@ let totalPrice = 0;
 for (const seat of seatList) {
     // console.log(seat.className)
     seat.addEventListener('click', function (seatEvent) {
-        console.log(seatEvent)
+        // console.log(seatEvent)
         // seatCounter = seatCounter + 1;
 
         // console.log("clicked btn")
@@ -99,22 +182,27 @@ for (const seat of seatList) {
             }
             else {
                 seatCounter = seatCounter + 1;
-                console.log("clicked btn", seat);
+                // console.log("clicked btn", seat);
                 updateTotalSeat();
                 setBackgroundColorById(seat.id);
                 createTableRowInPurchaseForm(seat.id);
 
                 updateSelectedSeatCountById(seatCounter);
 
+                calculateTicketPrice(seatCounter);
+
+
+
+
+
 
                 // getting Total Price element
-                const totalPriceElement = document.getElementById('total-price');
-                const totalPriceText = parseInt(totalPriceElement.innerText);
-                const totalPrice = seatCounter * 550;
+                // const totalPriceElement = document.getElementById('total-price');
+                // const totalPriceText = parseInt(totalPriceElement.innerText);
+                // const totalPrice = seatCounter * 550;
 
-                totalPriceElement.innerText = totalPrice;
+                // totalPriceElement.innerText = totalPrice;
 
-                console.log(totalPrice)
 
             }
         }
@@ -123,7 +211,7 @@ for (const seat of seatList) {
             return;
         }
         selectedSeats.push(seat);
-        console.log(selectedSeats)
+        // console.log(selectedSeats)
     })
 }
 

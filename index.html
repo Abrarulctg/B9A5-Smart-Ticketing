@@ -348,27 +348,29 @@
                                     </tbody>
                                 </table>
                                 <div>
-                                    <div class="flex justify-between text-[#030712] font-[500] text-base">
+                                    <div class="flex justify-between text-[#030712] font-[500] text-base mt-3">
                                         <p>Total Price</p>
                                         <p class="text-right">BDT <span id="total-price">0</span></p>
                                     </div>
 
-                                    <div class="flex relative my-4">
-                                        <input type="text" placeholder="Have any coupon?"
-                                            class="input input-bordered w-full max-w-xs " />
+                                    <div class="flex relative my-4" id="discount-form">
+                                        <input id="coupon-input" type="text" placeholder="Have any coupon?"
+                                            class="input input-bordered w-full max-w-xs" />
                                         <button
-                                            class="btn bg-[#1dd100] hover:bg-[#1dd100] text-white absolute right-0 top-0">Apply</button>
+                                            class="btn bg-[#1dd100] hover:bg-[#1dd100] text-white absolute right-0 top-0"
+                                            onclick="couponApply()" id="coupon-apply-btn" disabled>Apply</button>
                                     </div>
 
                                     <!-- Hidden for now. This will be visible if any coupon Code is applied-->
-                                    <div class="flex justify-between text-sm text-gray-600 hidden">
-                                        <p class="">Discounted Price [15%]</p>
-                                        <p class="text-right">BDT 100</p>
-
+                                    <div class="flex justify-between text-sm text-gray-600 hidden font-semibold my-4"
+                                        id="discount-amount-display">
+                                        <p class="">Discounted Amount:</p>
+                                        <p class="text-right">BDT <span id="discount-amount">0</span></p>
                                     </div>
+
                                     <div class="flex justify-between text-[#030712] font-semibold text-base">
                                         <p>Grand Total</p>
-                                        <p class="text-right">BDT 1100</p>
+                                        <p class="text-right">BDT <span id="grand-total">0</span></p>
                                     </div>
 
                                 </div>
