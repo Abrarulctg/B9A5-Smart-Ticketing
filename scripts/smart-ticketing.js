@@ -13,12 +13,6 @@ function findSeat(targetSeat) {
 }
 
 
-// Removing Background color from the seat button
-// function removeBackgroundColorById(elementId) {
-//     const element = document.getElementById(elementId);
-//     element.classList.remove('bg-[#F7F7F7');
-// }
-
 
 // Set and Remove Background color to the seat button
 function setBackgroundColorById(elementId) {
@@ -71,13 +65,6 @@ function calculateTicketPrice(counterQty) {
     return totalPrice, grandTotalPrice;
 }
 
-// function updateGrandTotal(counterQty) {
-//     const totalPriceElement = document.getElementById('grand-total');
-//     const totalPriceText = parseInt(totalPriceElement.innerText);
-//     const totalPrice = counterQty * 550;
-//     totalPriceElement.innerText = totalPrice;
-//     return totalPrice;
-// }
 
 
 
@@ -144,17 +131,56 @@ function couponApply() {
 
     const NEW15 = 0.15;
     const couple20 = 0.20;
+
+    const selectedSeatCountElement = document.getElementById('selected-seat').innerText;
+    const selectedSeatCount = parseInt(selectedSeatCountElement);
+
     if (couponText === 'NEW15') {
-        calculateDiscountAmount(NEW15);
+        if (selectedSeatCount === 0) {
+            alert("You have not any seat! Please a seat first.")
+        }
+        else {
+            calculateDiscountAmount(NEW15);
+        }
     }
     else if (couponText === 'Couple 20') {
-        calculateDiscountAmount(couple20);
-
+        if (selectedSeatCount === 0) {
+            alert("You have not any seat! Please a seat first.")
+        }
+        else {
+            calculateDiscountAmount(couple20);
+        }
     }
     else {
-        console.log("code doesn't matched");
+        alert("Coupon Code is invalid!");
     }
 }
+
+
+// Enabling Next button if User enter any text on the input field
+get_element_by_id('passenger-number').addEventListener('keyup', function (e) {
+    const userInputValue = e.target.value;
+
+    // console.log(userInputValue.length)
+    if (userInputValue.length === 11) {
+        get_element_by_id('purchase-next-btn').removeAttribute('disabled');
+    }
+})
+
+// // Enabling Next button if User enter any text on the input field
+// get_element_by_id('passenger-name').addEventListener('keyup', function (e) {
+//     const userInputValue = e.target.value;
+//     // console.log(typeof userInputValue)
+
+//     // const passengerNumberElement = document.getElementById('passenger-number');
+//     // const passengerNumber = parseInt(passengerNumberElement.innerText);
+
+//     if (typeof userInputValue === 'string' || typeof passengerNumber === 'number') {
+//         get_element_by_id('purchase-next-btn').removeAttribute('disabled');
+//     }
+// })
+
+
 
 
 // ============================ New Function Starting here ============================
@@ -191,23 +217,10 @@ for (const seat of seatList) {
 
                 calculateTicketPrice(seatCounter);
 
-
-
-
-
-
-                // getting Total Price element
-                // const totalPriceElement = document.getElementById('total-price');
-                // const totalPriceText = parseInt(totalPriceElement.innerText);
-                // const totalPrice = seatCounter * 550;
-
-                // totalPriceElement.innerText = totalPrice;
-
-
             }
         }
         else {
-            alert("You can not select more than 4 seats.")
+            alert("At a time, You can not select more than 4 seats!")
             return;
         }
         selectedSeats.push(seat);
@@ -219,3 +232,6 @@ for (const seat of seatList) {
 
 
 
+function reload() {
+    location.reload()
+}
